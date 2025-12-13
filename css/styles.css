@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-border-radius: 0.4rem;
+    --input-border-radius: 0.2rem;
+    --primary-font-size: 1rem;
+}
+body {
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    width: 100dvw;
+    font-family: helvetica;
+    background-color: papayawhip;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .register-form {
+        height: auto;
+        width: 30rem;
+        background-color: white;
+        border-radius: var(--primary-border-radius, 0.4rem);
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h1 {
+            width: 80%;
+        }
+
+        > div:not(:has(i:first-child)) {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 80%;
+            .fa-eye {
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: none;
+                cursor: pointer;
+            }
+            > input {
+                height: 3.5rem;
+                border-radius: var(--input-border-radius, 0.2rem);
+                padding: 0 1.5rem;
+                font-size: var(--primary-font-size, 1rem);
+                border-left: none;
+                border-top: none;
+                border-right: none;
+                border-bottom: 0.15rem solid gray;
+                background-color: hsl(0, 0%, 95%);
+            }
+
+
+            > input[type="password"]:not(:placeholder-shown) + .fa-eye{
+                display: block;
+            }
+        }
+
+        > button[type="submit"] {
+            height: 3.5rem;
+            width: 80%;
+            border: none;
+            border-radius: var(--input-border-radius);
+            font-size: var(--primary-font-size, 1rem);
+            cursor: pointer;
+            background-color: green;
+            color: white;
+            transition: 0.5s ease;
+
+            &:hover, &:focus {
+                background-color: hsl(120, 100%, 20%);
+                color: white;
+            }
+        }
+
+        > button:has(i:first-child) {
+            border: none;
+            border-radius: var(--input-border-radius);
+            height: 3.5rem;
+            width: 80%;
+            text-align: left;
+            padding-left: 1rem;
+            cursor: pointer;
+            font-size: var(--primary-font-size, 1rem);
+        }
+
+        > button[class="twitter-icon"] {
+            background-color: #60BCF6;
+        }
+
+        > button[class="facebook-icon"] {
+            background-color: #82B7F8;
+        }
+
+        .div-icons {
+            > button:has(i:first-child) {
+                border: none;
+                border-radius: var(--input-border-radius);
+                height: 3.5rem;
+                text-align: left;
+                padding-left: 1rem;
+                cursor: pointer;
+                font-size: var(--primary-font-size, 1rem);
+            }
+            > button[class="twitter-icon"] {
+                background-color: #60BCF6;
+            }
+
+            > button[class="facebook-icon"] {
+                background-color: #82B7F8;
+            }   
+        }
+    }
+}
